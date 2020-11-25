@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import React, { Text} from 'react';
-
+import React, {text} from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 import Button from './button.js'
 import "./index.css";
 import MapContainer from './map.js';
@@ -18,13 +18,20 @@ const PageTitle = ()=> {
       "Torch Draft Design Page"
     );
 }
+const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+
+  return <button onClick={() => loginWithRedirect()}>Log In</button>;
+};
     
 
 export default function App (){ 
     return (
+
       <div className="App">
-        <PageTitle style={{fontSize:'large'}}></PageTitle>
-        <Button></Button>
+        <div className="container"><PageTitle style={{fontSize:'large'}}></PageTitle></div>
+        <div className="container"><LoginButton></LoginButton></div>
+        <div className="container"><Button></Button></div>
         <div className="container">
           <MapContainer></MapContainer>  
         </div>
