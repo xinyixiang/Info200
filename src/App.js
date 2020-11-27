@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-import React, {text} from 'react';
+import React, {Component} from 'react';
+import { Auth0Provider } from "@auth0/auth0-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Button from './button.js'
 import "./index.css";
@@ -7,12 +8,8 @@ import MapContainer from './map.js';
 
 
 const LocalStore = ({ text }) => <div>{text}</div>;
-const divStyle = {
-    display:'flex',
-    alignitems:'center',
-    height: '100px', 
-    width: '100px'
-};
+
+//const PageTitle = <h1 style={{ color: 'white' }}>"Torch Draft Design Page"</h1>
 const PageTitle = ()=> {
     return (
       "Torch Draft Design Page"
@@ -29,9 +26,14 @@ export default function App (){
     return (
 
       <div className="App">
-        <div className="container"><PageTitle style={{fontSize:'large'}}></PageTitle></div>
-        <div className="container"><LoginButton></LoginButton></div>
-        <div className="container"><Button></Button></div>
+        <div className="container">
+          <PageTitle></PageTitle>
+          <LoginButton></LoginButton>
+          </div>
+        <div className="container">
+          <div className="field" />
+          <div className="container"><Button></Button></div>
+        </div>
         <div className="container">
           <MapContainer></MapContainer>  
         </div>

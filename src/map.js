@@ -7,7 +7,7 @@ const style = {
   border: '2px solid orange',  
   borderRadius:'30px',
   width: '800px',
-  height: '600px'
+  height: '800px'
 }
 
 export class MapContainer extends Component {

@@ -1,9 +1,10 @@
 import React,{useState} from "react"
 
+
 export default function Button(){
-    const [buttonText, setButtonText] = useState("Show map");
+    const [buttonText, setButtonText] = useState("Search");
     function handleClick() {
-      return setButtonText("Map showing");
+      return setButtonText("Searching now");
     }
     return <button onClick = {handleClick}>{buttonText}</button>
 }
